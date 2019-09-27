@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var morgan = require('morgan');
 
+var stylus = require('stylus');
+var nib = require('nib');
+
 var config = global.MY;
 var isProduction = config.isProduction;
 
@@ -17,10 +20,23 @@ app.use(favicon(path.join(__dirname, 'public/images/favicon.ico')));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '/public')));
+
 if (!isProduction) {
   app.use(errorHandler());
 }
+
+app.use(stylus.middleware({
+  src:__dirname + 'public',
+  compile:function (str, path) {
+    return stylus(str)
+      .set('filename', path)
+      .set('compress', true)
+      .use(nib())
+      .import('nib');
+  }
+}));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * 页面访问（没有模块化之前）
