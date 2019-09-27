@@ -25,8 +25,11 @@ if (!isProduction) {
   app.use(errorHandler());
 }
 
+// https://www.zhangxinxu.com/jq/stylus/middleware.php
+console.log('__dirname:', __dirname);
 app.use(stylus.middleware({
-  src:__dirname + 'public',
+  src:__dirname + '/public/css',
+  dest: __dirname + '/public/css',
   compile:function (str, path) {
     return stylus(str)
       .set('filename', path)
