@@ -26,9 +26,9 @@ var fsCache = require('gulp-fs-cache');
 initCrmJsTasks();
 
 function initCrmJsTasks() {
-  var jsConfig = require('../shomop-www/public/js/config');
-  var JSSrc = '../shomop-www/public/js';
-  var JSDest = '../shomop-www/public/js/compressed';
+  var jsConfig = require('../jade-project/public/js/config');
+  var JSSrc = '../jade-project/public/js';
+  var JSDest = '../jade-project/public/js/compressed';
   initJsTasks(jsConfig, JSSrc, JSDest);
 }
 
