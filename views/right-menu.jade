@@ -1,0 +1,57 @@
+//- 右侧菜单
+.customer-service-contact-code
+  .qrcode-map.qr-code-hover
+    img.qr-code-side-img(src="/images/right-menu/qrcode-shomop-weixin-side.png")
+  .qr-code-side-tip.qr-code-hover
+    img(src='/images/right-menu/qrcode-shomop-weixin.jpg')
+    span 关注夏猫短信公众号<br>随时随地查看店铺简报
+    i.dart
+    //i.glyphicon.glyphicon-play.glyphicon-play-top
+.customer-service-contact
+  img(src="/images/right-menu/customer-service-contact.png", usemap="#click-area")
+  map(name="click-area", id="click-area")
+    area(shape="rect", coords="0,0,36,36", href="aliim:sendmsg?touid=cntaobao夏猫科技", id="area-wangwang", data-trace-id="sidebar-customer-service-wangwang", class="wang-contact-hover")
+    area(shape="rect", coords="0,37,36,72", id="area-phone", class="phone-contact-hover")
+    area(shape="rect", coords="0,73,36,108", id="area-desktop-shortcut", class="desktop-shortcut-hover")
+    area(shape="rect", coords="0,109,36,144", id="area-collection", class="collection-hover")
+    area(shape="rect", coords="0,145,36,180", id="area-feedback", class="feedback-hover")
+  .area-title-hover#area-title-wang.wang-contact-hover.hover-hide
+    span 联系客服旺旺
+    i.dart
+  .area-title-hover#area-title-desktop-shortcut.desktop-shortcut-hover.hover-hide
+    span 桌面快捷方式
+    i.dart
+  .area-title-hover#area-title-collection.collection-hover.hover-hide
+    span 收藏夏猫短信
+    i.dart
+  .area-title-hover#area-title-feedback.feedback-hover.hover-hide
+    span 投诉/意见反馈
+    i.dart
+  .phone-contact.phone-contact-hover.hover-hide
+    .phone-contact-weekday
+      .contact-num
+        img(src="/images/right-menu/phone-contact-1.png")
+        span 4001023233
+      .contact-time
+        img(src="/images/right-menu/phone-contact-2.png")
+        span 工作日 9:30—18:30
+    .phone-contact-weekend
+      .contact-num
+        img(src="/images/right-menu/phone-contact-1.png")
+        span 4001023233
+      .contact-time
+        img(src="/images/right-menu/phone-contact-2.png")
+        span 工作日18:30—22:30 & 周末10:30—20:00
+    i.dart
+
+// 反馈
+#feedback-modal(tabindex='-1', role='dialog', aria-hidden="true", class='modal fade')
+  .modal-dialog
+    .modal-content
+      button(class="btn btn-primary large" id="feedback-submit")
+      button(class="btn btn-primary large close refuse-button")
+      span.close
+      .modal-body
+        .modal-panel.modal-panel-1
+          p.feedback-tip 亲，夏猫正在进行一次大的改版升级，在使用中有什么问题和建议请尽情吐槽，末尾填写手机号，还将有机会赢得话费等礼品！
+          textarea#feedback-content(type="text", placeholder="吐槽内容不要低于20个字，每一条我们都会认真查看！")

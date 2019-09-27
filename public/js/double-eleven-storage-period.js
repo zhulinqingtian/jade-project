@@ -1,0 +1,1 @@
+require('./right-menu');

@@ -1,0 +1,17 @@
+node_modules/
+public/js/templates/
+public/css/*.css
+public/css/*/*.css
+public/js/compressed
+/cache/*.json
+/cache/js-cache/*
+uploadImage/
+uploads/
+www/public/images
+
+# Editor directories and files
+/.idea
+.idea/*
+.idea/*/*
+.vscode
+.history
