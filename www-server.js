@@ -26,10 +26,10 @@ if (!isProduction) {
 }
 
 // https://www.zhangxinxu.com/jq/stylus/middleware.php
-console.log('__dirname:', __dirname);
+
+// TODO 这里将.styl文件转化为.css文件
 app.use(stylus.middleware({
-  src:__dirname + '/public/css',
-  dest: __dirname + '/public/css',
+  src:__dirname + '/public',
   compile:function (str, path) {
     return stylus(str)
       .set('filename', path)
@@ -39,6 +39,7 @@ app.use(stylus.middleware({
   }
 }));
 
+// 设置静态目录
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**

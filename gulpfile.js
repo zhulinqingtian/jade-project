@@ -4,6 +4,7 @@
 'use strict';
 var path = require('path');
 var del = require('del');
+var stylus = require('stylus');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var rename = require('gulp-rename');
@@ -33,6 +34,22 @@ function initCrmJsTasks() {
 }
 
 function initJsTasks(jsConfig, JSSrc, JSDest) {
+  //一次任务 移动styl文件到stylus文件夹
+  gulp.task('html', ()=>{
+    gulp.src('public/css/*.styl')
+      .pipe(gulp.dest('public/stylus'));
+  });
+
+  // TODO 目前未测成功
+  gulp.task('stylus-compress', function(){
+    gulp.src('public/css/*.styl')
+      .pipe(stylus())
+      .pipe(rename(function (path) {
+        path.basename += '.min';
+      }))
+      .pipe(gulp.dest('public/css/compress'));
+  });
+
   gulp.task('clean.js', function (cb) {
     del(JSDest + '/**/*', cb);
   });
