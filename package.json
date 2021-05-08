@@ -25,7 +25,7 @@
     "iconv-lite": "0.2.7",
     "ip": "1.1.4",
     "jade": "1.9.2",
-    "json-bigint": "0.2.3",
+    "json-bigint": "1.0.0",
     "json-duplicate-key-handle": "github:TLuigi003/json-duplicate-key-handle",
     "longjohn": "0.2.1",
     "memory-cache": "0.2.0",
