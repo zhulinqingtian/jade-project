@@ -17,7 +17,7 @@
     "dateformat": "1.0.4-1.2.3",
     "dot": "1.0.1",
     "errorhandler": "1.5.1",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "express-session": "1.16.2",
     "extend": "2.0.0",
     "generic-pool": "2.4.2",
